@@ -2,6 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    data: {
+      radio_transiction_checked: 'state~="checked"',
+      radio_transiction_unchecked: 'state~="unchecked"'
+    },
     extend: {
       colors: {
         // GREEN
@@ -24,6 +28,8 @@ export default {
         gray_600:  "#29292E",
         gray_700:  "#202024",
         gray_800:  "#121214",
+        // RGBA
+        modalBackground: "rgba(0, 0, 0, 0.75)"
       },
     },
   },
