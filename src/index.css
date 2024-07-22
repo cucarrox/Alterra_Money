@@ -19,6 +19,7 @@ body {
   font-size: 1rem;
   background-color: #202024;
   -webkit-font-smoothing: antialiased;
+  color: #E1E1E6;
 }
 
 body, input, textarea, button {
