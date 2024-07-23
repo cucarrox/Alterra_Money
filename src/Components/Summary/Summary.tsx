@@ -5,8 +5,7 @@ import {
 } from "@phosphor-icons/react";
 
 export function Summary() {
-
-  const fictionalMoney = 17000 
+  const fictionalMoney = 17000;
 
   return (
     <section className="w-full max-w-[1120px] m-auto py-0 px-6 gap-8 grid grid-cols-3 mt-[-5rem]">

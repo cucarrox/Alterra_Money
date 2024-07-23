@@ -20,8 +20,7 @@ const PriceHighlight: React.FC<PriceHighlightProps> = ({
 };
 
 export function Home() {
-
-   const fictionalMoney = 17000 
+  const fictionalMoney = 17000;
 
   return (
     <>
