@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { Button } from "../Ui/Button";
@@ -29,9 +30,10 @@ export function NewTransictionModal() {
               required
             />
             <input
-              className="rounded-md border-0 bg-gray_800 text-gray_200 p-4 placeholder:text-gray_400"
+              className="rounded-md border-0 bg-gray_800 text-gray_200 p-4 placeholder:text-gray_400 [&::-webkit-inner-spin-button]:appearance-none"
               type="number"
               placeholder="Preço"
+              min={1}
               required
             />
             <input
@@ -41,13 +43,19 @@ export function NewTransictionModal() {
               required
             />
             <RadioGroup.Root className="grid grid-cols-2 gap-4 mt-2">
-              <RadioGroup.Item value="income" className="bg-gray_600 p-4 flex items-center justify-center gap-2 rounded-md cursor-pointer border-0 text-gray_200 data-radio_transiction_checked:bg-green_200 data-radio_transiction_checked:text-white data-radio_transiction_unchecked:text-green_100 data-radio_transiction_unchecked:hover:bg-gray_500 transition">
+              <RadioGroup.Item
+                value="income"
+                className="bg-gray_600 p-4 flex items-center justify-center gap-2 rounded-md cursor-pointer border-0 text-gray_200 data-radio_transiction_checked:bg-green_200 data-radio_transiction_checked:text-white data-radio_transiction_unchecked:text-green_100 data-radio_transiction_unchecked:hover:bg-gray_500 transition"
+              >
                 <>
                   <ArrowCircleUp size={24} />
                 </>
                 <span className="text-white">Entrada</span>
               </RadioGroup.Item>
-              <RadioGroup.Item value="outcome" className="bg-gray_600 p-4 flex items-center justify-center gap-2 rounded-md cursor-pointer border-0 text-gray_200 data-radio_transiction_checked:bg-red_200 data-radio_transiction_checked:text-white data-radio_transiction_unchecked:text-red_100 data-radio_transiction_unchecked:hover:bg-gray_500 transition">
+              <RadioGroup.Item
+                value="outcome"
+                className="bg-gray_600 p-4 flex items-center justify-center gap-2 rounded-md cursor-pointer border-0 text-gray_200 data-radio_transiction_checked:bg-red_200 data-radio_transiction_checked:text-white data-radio_transiction_unchecked:text-red_100 data-radio_transiction_unchecked:hover:bg-gray_500 transition"
+              >
                 <>
                   <ArrowCircleDown size={24} />
                 </>

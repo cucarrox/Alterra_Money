@@ -34,7 +34,7 @@ export function Summary() {
         </strong>
       </div>
       <div className="bg-green_300 rounded-md p-7">
-        <header className="flex items-center justify-between text-gray_300">
+        <header className="flex items-center justify-between text-gray_100">
           <span>Total</span>
           <CurrencyGbp weight="fill" size={32} className="text-gray_100" />
         </header>
