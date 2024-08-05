@@ -1,35 +1,21 @@
-import { ButtonHTMLAttributes, FC } from "react";
-import { VariantProps, cva } from "class-variance-authority";
+import { ButtonHTMLAttributes, forwardRef } from "react";
+import { VariantProps } from "class-variance-authority";
 import { cn } from "../Libs/Utils";
-
-const buttonVariants = cva(
-  "rounded-[8px] font-bold flex justify-center items-center gap-2 disabled:opacity-[50%] disabled:cursor-not-allowed transition",
-  {
-    variants: {
-      variant: {
-        default: "bg-blue_100 hover:bg-blue_200 text-gray-100",
-        warning: "bg-red_200 hover:bg-red_300 text-gray-100",
-        transiction: "bg-gray_600 p-4 flex items-center justify-center gap-2 rounded-md cursor-pointer border-0 text-gray_200 hover:bg-gray_700",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+import { ButtonVariants } from "./ButtonVariants";
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof ButtonVariants> {}
 
-const Button: FC<ButtonProps> = ({ className, variant, ...props }) => {
-  return (
-    <button
-      className={cn(buttonVariants({ variant, className }))}
-      {...props}
-    ></button>
-  );
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={cn(ButtonVariants({ variant, className }))}
+        {...props}
+      ></button>
+    )
+  }
+);
 Button.displayName = "button";
-
-export { Button, buttonVariants };

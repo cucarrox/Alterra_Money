@@ -1,10 +1,9 @@
-import {
-  ArrowCircleDown,
-  ArrowCircleUp,
-  CurrencyGbp,
-} from "@phosphor-icons/react";
+import { useContext } from "react";
+import { TransactionsContext } from "../../Context/Context";
+import { ArrowCircleDown, ArrowCircleUp, CurrencyGbp,} from "@phosphor-icons/react";
 
 export function Summary() {
+  const { transactions } = useContext(TransactionsContext);
   const fictionalMoney = 17000;
 
   return (
@@ -15,8 +14,8 @@ export function Summary() {
           <ArrowCircleUp size={28} className="text-green_100" />
         </header>
         <strong className="block mt-4 text-2xl">
-          {new Intl.NumberFormat("en-gb", {
-            currency: "GBP",
+          {new Intl.NumberFormat("pt-br", {
+            currency: "BRL",
             style: "currency",
           }).format(fictionalMoney)}
         </strong>
@@ -27,8 +26,8 @@ export function Summary() {
           <ArrowCircleDown size={28} className="text-red_100" />
         </header>
         <strong className="block mt-4 text-2xl">
-          {new Intl.NumberFormat("en-gb", {
-            currency: "GBP",
+          {new Intl.NumberFormat("pt-br", {
+            currency: "BRL",
             style: "currency",
           }).format(fictionalMoney)}
         </strong>
@@ -39,8 +38,8 @@ export function Summary() {
           <CurrencyGbp weight="fill" size={32} className="text-gray_100" />
         </header>
         <strong className="block mt-4 text-2xl">
-          {new Intl.NumberFormat("en-gb", {
-            currency: "GBP",
+          {new Intl.NumberFormat("pt-br", {
+            currency: "BRL",
             style: "currency",
           }).format(fictionalMoney)}
         </strong>

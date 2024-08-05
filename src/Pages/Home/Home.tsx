@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { Header } from "../../Components/Header/Header";
 import { SearchForm } from "../../Components/SerachForm/SearchForm";
 import { Summary } from "../../Components/Summary/Summary";
+import { TransactionsContext } from "../../Context/Context";
 
 interface PriceHighlightProps {
   variant: "income" | "outcome";
@@ -13,14 +15,12 @@ const PriceHighlight: React.FC<PriceHighlightProps> = ({
 }) => {
   const colorClass = variant === "income" ? "text-green_100" : "text-red_100";
   return (
-    <span className={`py-5 px-8 bg-gray_600 flex ${colorClass}`}>
-      {children}
-    </span>
+    <td className={`py-5 px-8 bg-gray_600 ${colorClass}`}>{children}</td>
   );
 };
 
 export function Home() {
-  const fictionalMoney = 17000;
+  const { transactions } = useContext(TransactionsContext);
 
   return (
     <>
@@ -30,42 +30,25 @@ export function Home() {
         <SearchForm />
         <table className="w-full border-separate border-spacing-x-[0] border-spacing-y-[0.5rem] mt-6">
           <tbody>
-            <tr>
-              <td
-                className="py-5 px-8 bg-gray_600 rounded-tl-md rounded-bl-md"
-                width="50%"
-              >
-                Desenvolvimento de site
-              </td>
-              <PriceHighlight variant="income">
-                {new Intl.NumberFormat("en-gb", {
-                  currency: "GBP",
-                  style: "currency",
-                }).format(fictionalMoney)}
-              </PriceHighlight>
-              <td className="py-5 px-8 bg-gray_600">Venda</td>
-              <td className="py-5 px-8 bg-gray_600 rounded-tr-md rounded-br-md">
-                10/03/2024
-              </td>
-            </tr>
-            <tr>
-              <td
-                className="py-5 px-8 bg-gray_600 rounded-tl-md rounded-bl-md"
-                width="50%"
-              >
-                Equipamentos Eletrónicos
-              </td>
-              <PriceHighlight variant="outcome">
-                {new Intl.NumberFormat("en-gb", {
-                  currency: "GBP",
-                  style: "currency",
-                }).format(fictionalMoney)}
-              </PriceHighlight>
-              <td className="py-5 px-8 bg-gray_600">Compra</td>
-              <td className="py-5 px-8 bg-gray_600 rounded-tr-md rounded-br-md">
-                10/03/2024
-              </td>
-            </tr>
+            {transactions.map(transaction => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="50%" className="py-5 px-8 bg-gray_600 rounded-tl-md rounded-bl-md">
+                    {transaction.description}
+                  </td>
+                  <PriceHighlight variant={transaction.type}>
+                    {new Intl.NumberFormat("pt-br", {
+                      currency: "BRL",
+                      style: "currency",
+                    }).format(transaction.price)}
+                  </PriceHighlight>
+                  <td className="py-5 px-8 bg-gray_600">{transaction.category}</td>
+                  <td className="py-5 px-8 bg-gray_600 rounded-tr-md rounded-br-md">
+                    {transaction.createdAt}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </main>
