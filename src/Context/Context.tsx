@@ -33,6 +33,8 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
      loadHome();
    }, []);
 
+   
+
    return (
       <TransactionsContext.Provider value={{ transactions }}>
          {children}
