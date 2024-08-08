@@ -14,7 +14,7 @@ export function NewTransictionModal() {
     <>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed w-screen h-screen inset-0 bg-modalBackground" />
-        <Dialog.Content className="min-w-[32rem] rounded-md py-10 px-12 bg-gray_700 fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+        <Dialog.Content aria-describedby={undefined} className="min-w-[32rem] rounded-md py-10 px-12 bg-gray_700 fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
           <Dialog.Title className="text-lg flex gap-2 items-center">
             <CashRegister size={28} />
             Nova Transição
