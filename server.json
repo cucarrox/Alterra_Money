@@ -15,6 +15,70 @@
       "category": "Compra",
       "price": 1400,
       "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 3,
+      "description": "Sopa",
+      "type": "income",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 4,
+      "description": "Spore",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 5,
+      "description": "Roupa",
+      "type": "income",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 6,
+      "description": "Hambuegueres",
+      "type": "income",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 7,
+      "description": "Carro",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 8,
+      "description": "Parrot",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 9,
+      "description": "Alguma coisa",
+      "type": "income",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
+    },
+    {
+      "id": 10,
+      "description": "Nave",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 1400,
+      "createdAt": "2024-07-22T20:55:36.854Z"
     }
   ]
 }
